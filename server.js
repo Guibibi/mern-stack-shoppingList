@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const items = require("./routes/api/items")
 
 const app = express();
+app.use(express.json())
 
 //Bodyparser was remplaced by express.json
 
