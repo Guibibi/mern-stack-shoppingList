@@ -12,3 +12,8 @@ export const deleteItem = (id) => {
 		payload: id
 	};
 };
+
+export const addItem = (item) => ({
+	type: ADD_ITEM,
+	payload: item
+});
