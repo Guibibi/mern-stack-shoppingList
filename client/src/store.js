@@ -5,8 +5,22 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 const initialState = {};
 
-const middleWare = [ thunk ];
+const middleware = [ thunk ];
 
-const store = createStore(rootReducer, initialState, composeWithDevTools(applyMiddleware(...middleWare)));
+const composeEnhancers = composeWithDevTools(
+	{
+		// options like actionSanitizer, stateSanitizer
+	}
+);
+const store = createStore(
+	rootReducer,
+	initialState,
+	composeEnhancers(
+		applyMiddleware(...middleware)
+		// other store enhancers if any
+	)
+);
+
+/* const store = createStore(rootReducer, initialState, composeWithDevTools(applyMiddleware(...middleware))); */
 
 export default store;
