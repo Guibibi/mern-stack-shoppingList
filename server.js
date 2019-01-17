@@ -11,11 +11,9 @@ app.use(express.json());
 const db = require('./config/keys').mongoURI;
 
 //Connect to mongo
-mongoose
-	.connect(db, {
-		useNewUrlParser: true
-	})
-	.then(() => console.log('MongoDB connected'))
+ongoose
+	.connect(db, { useNewUrlParser: true }) // Adding new mongo url parser
+	.then(() => console.log('MongoDB Connected...'))
 	.catch((err) => console.log(err));
 
 //Use Routes
